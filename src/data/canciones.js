@@ -10,7 +10,7 @@ export const canciones = [
         artista: "Kero Kero Bonito",
         album: "Intro Bonito",
         duracion: "2:56",
-        portada: "/portadas/sick-beat.jpg",
+        portada: "public/portadas/sick-beat.jpg",
         anio: 2014,
         reproducciones: 18500000,
         favorita: true,
