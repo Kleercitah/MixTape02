@@ -1,0 +1,55 @@
+// La playlist de la estación. Tiene los mismos datos que ya usabas en cancion.js,
+// pero ahora son varias canciones dentro de un array.
+// Cada una tiene un "id" distinto: React lo necesita como "key" en el .map().
+// "favorita" es para el Ticket 3 de la clase y "energia" (0 a 100) para el Home Challenge.
+
+export const canciones = [
+    {
+        id: 1,
+        titulo: "Sick Beat",
+        artista: "Kero Kero Bonito",
+        album: "Intro Bonito",
+        duracion: "2:56",
+        portada: "/portadas/sick-beat.jpg",
+        anio: 2014,
+        reproducciones: 18500000,
+        favorita: true,
+        energia: 72,
+    },
+    {
+        id: 2,
+        titulo: "Soldadura en Órbita",
+        artista: "Nova y los Tornillos",
+        album: "Chispas",
+        duracion: "2:58",
+        portada: "/portadas/soldadura-en-orbita.webp",
+        anio: 2023,
+        reproducciones: 91500,
+        favorita: false,
+        energia: 91,
+    },
+    {
+        id: 3,
+        titulo: "Bosque de los Anillos",
+        artista: "Musgo Mecánico",
+        album: "Raíces",
+        duracion: "4:12",
+        portada: "/portadas/bosque-de-los-anillos.webp",
+        anio: 2015,
+        reproducciones: 12750,
+        favorita: true,
+        energia: 34,
+    },
+    {
+        id: 4,
+        titulo: "Señal Perdida",
+        artista: "Rumbo Rojo",
+        album: "Frecuencias",
+        duracion: "3:47",
+        portada: "/portadas/senal-perdida.webp",
+        anio: 2021,
+        reproducciones: 30400,
+        favorita: false,
+        energia: 58,
+    },
+];

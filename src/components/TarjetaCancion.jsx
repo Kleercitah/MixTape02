@@ -1,11 +1,11 @@
-import { titulo, artista, portada, album, duracion, anio, reproducciones } from "../data/cancion.js";
-import Controles from "./Controles.jsx";
-import Siguiente from "./Siguiente.jsx";
-
-function TarjetaCancion() {
+function TarjetaCancion({ titulo, artista, album, duracion, portada, anio, reproducciones, favorita, energia }) {
+    console.log("Ruta recibida para", titulo, ":", portada);
     return (
         <article className="tarjeta">
-            <img src={portada} alt="Portada del álbum" className="tarjeta-portada" />
+            <img src={portada} alt={`Portada de ${album}`} className="tarjeta-portada" />
+            
+            {favorita && <span className="etiqueta-favorita">♥ Favorita</span>}
+            
             <h2 className="tarjeta-titulo">{titulo}</h2>
             <p className="tarjeta-artista">{artista}</p>
             <p className="tarjeta-detalle">Álbum: {album}</p>
@@ -14,9 +14,10 @@ function TarjetaCancion() {
             <p className="tarjeta-detalle">Año: {anio}</p>
             <p className="tarjeta-detalle">Reproducciones: {reproducciones}</p>
             <p className="tarjeta-detalle">Lanzada hace {2026 - anio} años</p>
-            
-            <Controles />
-            <Siguiente /> {}
+        
+            <div className="barra-energia">
+                <div className="barra-energia-relleno" style={{ width: energia + "%" }}></div>
+            </div>
         </article>
     );
 }

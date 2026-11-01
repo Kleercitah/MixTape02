@@ -4,4 +4,5 @@ import { defineConfig } from "vite";
 // El plugin de React es lo que le enseña a Vite a entender JSX
 export default defineConfig({
     plugins: [react()],
+    base: '/-Home-Challenge-Turno-de-noche/',
 });
