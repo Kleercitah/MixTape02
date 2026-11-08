@@ -1,115 +1,91 @@
-/* Estilos de toda la app. Ya vienen listos: tu trabajo hoy es el JSX. */
-
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+}
+
 body {
     min-height: 100vh;
     font-family: system-ui, "Segoe UI", Roboto, sans-serif;
-    background: radial-gradient(circle at top, #10233d 0%, #070b14 60%);
-    color: #e6f1ff;
+    background: #101025;
+    color: #F8FAFC;
+    line-height: 1.5;
 }
 
 .app {
-    max-width: 420px;
+    width: min(100%, 1160px);
     margin: 0 auto;
-    padding: 48px 20px;
+    padding: 40px 24px 24px;
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 28px;
 }
-
-/* ── Encabezado ───────────────────────────── */
 
 .encabezado {
     text-align: center;
 }
 
 .logo {
-    font-size: 2.4rem;
-    letter-spacing: 0.08em;
-    color: #c891ff;
+    font-size: clamp(2rem, 5vw, 3rem);
+    letter-spacing: 0.12em;
+    line-height: 1.1;
+    color: #A78BFA;
 }
 
 .lema {
     margin-top: 4px;
-    color: #8aa4c2;
+    color: #c4c0dc;
     font-size: 0.95rem;
 }
 
-/* ── Tarjeta de la canción ────────────────── */
-
-.tarjeta {
-    background: #0f1a2b;
-    border: 1px solid #2f1d50;
-    border-radius: 20px;
-    padding: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
-}
-
-.tarjeta-portada {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    border-radius: 14px;
-    display: block;
-}
-
-.tarjeta-titulo {
-    margin-top: 18px;
-    font-size: 1.5rem;
-}
-
-.tarjeta-artista {
-    margin-top: 4px;
-    color: #fb61ca;
+.contador,
+.contador-favoritas {
+    display: inline-block;
+    margin: 14px 4px 0;
+    padding: 5px 12px;
+    border: 1px solid #41386c;
+    border-radius: 999px;
+    background: #242044;
+    color: #F8FAFC;
+    font-size: 0.85rem;
     font-weight: 600;
 }
 
-.tarjeta-detalle {
-    margin-top: 6px;
-    color: #8aa4c2;
-    font-size: 0.9rem;
+.contador-favoritas {
+    color: #F472B6;
 }
-
-/* ── Controles (bonus) ────────────────────── */
-
-.controles {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-}
-
-.boton-control {
-    width: 52px;
-    height: 52px;
-    border: none;
-    border-radius: 50%;
-    background: #1d3350;
-    color: #e6f1ff;
-    font-size: 1.2rem;
-    cursor: pointer;
-}
-
-.boton-control:hover {
-    background: #61dafb;
-    color: #070b14;
-}
-
 
 .pie {
     text-align: center;
-    color: #8aa4c2;
+    color: #c4c0dc;
     font-size: 0.85rem;
+    padding-bottom: 12px;
 }
 
-.siguiente {
-    margin-top: 16px;
-    padding-top: 14px;
-    border-top: 1px solid #1d3350;
-    color: #8aa4c2;
-    font-size: 0.9rem;
+button,
+input {
+    font: inherit;
+}
+
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid #F472B6;
+    outline-offset: 3px;
+}
+
+@media (max-width: 560px) {
+    .app {
+        padding: 28px 16px 16px;
+        gap: 22px;
+    }
+
+    .encabezado .contador,
+    .encabezado .contador-favoritas {
+        margin-top: 10px;
+    }
 }

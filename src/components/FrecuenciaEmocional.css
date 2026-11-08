@@ -1,0 +1,99 @@
+.frecuencia {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 22px 24px;
+    border: 1px solid var(--cabina-borde);
+    border-radius: 20px;
+    background:
+        radial-gradient(ellipse at 92% 10%, rgba(167, 139, 250, 0.18), transparent 42%),
+        var(--cabina-panel);
+    transition: border-color 180ms ease, background-color 180ms ease;
+}
+
+.frecuencia-energetico {
+    border-color: rgba(244, 114, 182, 0.72);
+    background:
+        radial-gradient(ellipse at 92% 10%, rgba(244, 114, 182, 0.22), transparent 42%),
+        var(--cabina-panel);
+}
+
+.frecuencia-nostalgico {
+    border-color: rgba(167, 139, 250, 0.78);
+    background:
+        radial-gradient(ellipse at 92% 10%, rgba(167, 139, 250, 0.26), transparent 46%),
+        var(--cabina-panel);
+}
+
+.frecuencia-etiqueta {
+    color: var(--cabina-acento);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+}
+
+.frecuencia-titulo {
+    margin-top: 5px;
+    font-size: clamp(1.15rem, 3vw, 1.4rem);
+}
+
+.frecuencia-mensaje {
+    margin-top: 6px;
+    color: var(--cabina-texto-secundario);
+    line-height: 1.5;
+}
+
+.frecuencia-estados {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.frecuencia-boton {
+    padding: 9px 13px;
+    border: 1px solid var(--cabina-borde);
+    border-radius: 999px;
+    background: rgba(16, 16, 37, 0.72);
+    color: var(--cabina-texto);
+    cursor: pointer;
+    transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.frecuencia-boton:hover {
+    border-color: var(--cabina-acento);
+    transform: translateY(-1px);
+}
+
+.frecuencia-boton.activo {
+    border-color: var(--cabina-acento);
+    background: var(--cabina-acento);
+    color: #17142c;
+    font-weight: 700;
+}
+
+@media (max-width: 640px) {
+    .frecuencia {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 16px;
+        padding: 20px;
+    }
+
+    .frecuencia-estados {
+        justify-content: flex-start;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .frecuencia,
+    .frecuencia-boton {
+        transition: none;
+    }
+
+    .frecuencia-boton:hover {
+        transform: none;
+    }
+}

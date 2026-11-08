@@ -1,6 +1,7 @@
 import { useState } from "react";
 
-function PedidoCancion() {
+// Ticket 1: 👈 Recibimos la prop onAgregar
+function PedidoCancion({ onAgregar }) {
     const [cancion, setCancion] = useState("");
     const [nombre, setNombre] = useState("");
     const [error, setError] = useState("");
@@ -21,6 +22,8 @@ function PedidoCancion() {
         }
 
         setError("");
+        onAgregar(cancion, nombre);
+
         setConfirmacion(`Pedido recibido: ${cancion}, para ${nombre}`);
         setCancion("");
         setNombre("");
@@ -30,28 +33,28 @@ function PedidoCancion() {
         <form className="pedido" onSubmit={manejarEnvio}>
             <h2 className="seccion-titulo">Pide una canción</h2>
 
-            <label>Canción</label>
+            <label htmlFor="pedido-cancion">Canción</label>
             <input 
+                id="pedido-cancion"
                 type="text" 
                 placeholder="¿Qué quieres escuchar?" 
                 value={cancion}
                 onChange={(e) => setCancion(e.target.value)}
             />
             
-            {}
             <span className={cancion.length > 40 ? "contador-letras contador-letras-rojo" : "contador-letras"}>
                 {cancion.length}/40
             </span>
 
-            <label>Tu nombre</label>
+            <label htmlFor="pedido-nombre">Tu nombre</label>
             <input 
+                id="pedido-nombre"
                 type="text" 
                 placeholder="¿Quién la pide?" 
                 value={nombre}
                 onChange={(e) => setNombre(e.target.value)}
             />
 
-            {}
             <button 
                 type="submit" 
                 disabled={cancion === "" || nombre === "" || cancion.length > 40}
@@ -59,8 +62,8 @@ function PedidoCancion() {
                 Enviar pedido
             </button>
 
-            {error && <p className="pedido-error">{error}</p>}
-            {confirmacion && <p className="pedido-exito">{confirmacion}</p>}
+            {error && <p className="pedido-error" role="alert">{error}</p>}
+            {confirmacion && <p className="pedido-exito" role="status">{confirmacion}</p>}
         </form>
     );
 }

@@ -53,7 +53,7 @@ export const canciones = [
         portada: `${import.meta.env.BASE_URL}portadas/senal-perdida.webp`,
         anio: 2021,
         reproducciones: 30400,
-        favorita: false,
+        favorita: true,
         energia: 58,
     },
 ];

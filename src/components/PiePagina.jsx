@@ -3,7 +3,7 @@ function PiePagina() {
 
     return (
         <footer className="pie">
-            Hecho por {autor} · Estación Umbral
+            Hecho por {autor} · AURORA FM
         </footer>
     );
 }
